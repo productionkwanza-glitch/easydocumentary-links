@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Easy Documentary — All Channels</title>
+<meta name="description" content="The full catalog of documentary channels: Easy Documentary, Time Machine and Disaster TV.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#11140F;
+    --ink-soft:#181C13;
+    --paper:#EDE6D6;
+    --paper-dim:#B9B19C;
+    --copper:#C28F4D;
+    --copper-dim:#8A6736;
+    --nature:#5C7A5E;
+    --explore:#5B7A8C;
+    --disaster:#8C4332;
+    --line:rgba(237,230,214,0.14);
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--ink);
+    color:var(--paper);
+    font-family:'Inter',sans-serif;
+    line-height:1.6;
+  }
+
+  h1,h2,h3,.serif{
+    font-family:'Fraunces',serif;
+    font-weight:500;
+    letter-spacing:0.01em;
+  }
+
+  a{color:inherit;text-decoration:none;}
+
+  .wrap{
+    max-width:920px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+
+  /* ===== HEADER ===== */
+  header{
+    padding:96px 0 72px;
+    border-bottom:1px solid var(--line);
+    position:relative;
+  }
+  .eyebrow{
+    font-size:13px;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--copper);
+    margin-bottom:18px;
+  }
+  header h1{
+    font-size:clamp(38px,6vw,64px);
+    line-height:1.05;
+    margin:0 0 20px;
+    color:var(--paper);
+  }
+  header p.lede{
+    max-width:540px;
+    color:var(--paper-dim);
+    font-size:17px;
+    margin:0;
+  }
+  .reel{
+    margin-top:48px;
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+  }
+  .reel span{
+    font-size:12px;
+    border:1px solid var(--line);
+    color:var(--paper-dim);
+    padding:6px 12px;
+    border-radius:2px;
+    letter-spacing:0.04em;
+  }
+
+  /* ===== SECTION LABELS ===== */
+  .section{
+    padding:80px 0;
+  }
+  .section + .section{
+    border-top:1px solid var(--line);
+  }
+  .section-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    gap:24px;
+    margin-bottom:12px;
+    flex-wrap:wrap;
+  }
+  .section-head h2{
+    font-size:28px;
+    margin:0;
+    color:var(--paper);
+  }
+  .section-num{
+    font-size:13px;
+    color:var(--copper);
+    letter-spacing:0.08em;
+  }
+  .section-desc{
+    color:var(--paper-dim);
+    max-width:560px;
+    font-size:15px;
+    margin:0 0 48px;
+  }
+
+  /* ===== GALAXY TRUNK ===== */
+  .trunk{
+    display:grid;
+    grid-template-columns:1.1fr 1.9fr;
+    gap:0;
+    border:1px solid var(--line);
+    margin-bottom:36px;
+  }
+  .trunk-main{
+    padding:32px;
+    border-right:1px solid var(--line);
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+  }
+  .trunk-tag{
+    font-size:12px;
+    color:var(--copper);
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    margin-bottom:14px;
+  }
+  .trunk-main h3{
+    font-size:24px;
+    margin:0 0 12px;
+  }
+  .trunk-main p{
+    color:var(--paper-dim);
+    font-size:14px;
+    margin:0 0 24px;
+  }
+  .trunk-link{
+    font-size:14px;
+    color:var(--paper);
+    border-bottom:1px solid var(--copper);
+    width:fit-content;
+    padding-bottom:3px;
+    transition:opacity .2s;
+  }
+  .trunk-link:hover{opacity:0.7;}
+  .trunk-branches{
+    display:flex;
+    flex-direction:column;
+  }
+  .branch-row{
+    display:grid;
+    grid-template-columns:90px 1fr auto;
+    align-items:center;
+    gap:16px;
+    padding:18px 28px;
+    border-bottom:1px solid var(--line);
+    transition:background .2s;
+  }
+  .branch-row:last-child{border-bottom:none;}
+  .branch-row:hover{background:rgba(237,230,214,0.04);}
+  .branch-theme{
+    font-size:11px;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    padding:4px 0;
+    border-top:2px solid currentColor;
+  }
+  .branch-name{
+    font-size:15px;
+    color:var(--paper);
+  }
+  .branch-desc{
+    font-size:12px;
+    color:var(--paper-dim);
+    display:block;
+    margin-top:2px;
+  }
+  .branch-go{
+    font-size:13px;
+    color:var(--paper-dim);
+    white-space:nowrap;
+  }
+  .branch-row:hover .branch-go{color:var(--copper);}
+
+  /* theme colors */
+  .t-general{color:var(--copper);}
+  .t-history{color:#B8946A;}
+  .t-nature{color:var(--nature);}
+  .t-ancient{color:#A98759;}
+  .t-knowledge{color:var(--explore);}
+  .t-travel{color:#7A93A0;}
+  .t-explore{color:#8B9B7E;}
+
+  /* ===== STANDALONE CARDS ===== */
+  .standalone-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:1px;
+    border:1px solid var(--line);
+  }
+  .standalone-card{
+    padding:36px;
+    background:var(--ink-soft);
+    position:relative;
+  }
+  .standalone-card .trunk-tag{margin-bottom:18px;}
+  .standalone-card h3{
+    font-size:26px;
+    margin:0 0 12px;
+  }
+  .standalone-card p{
+    color:var(--paper-dim);
+    font-size:14px;
+    margin:0 0 28px;
+  }
+  .card-disaster .trunk-tag{color:var(--disaster);}
+  .card-time .trunk-tag{color:#B8946A;}
+
+  /* ===== FOOTER ===== */
+  footer{
+    padding:48px 0 64px;
+    border-top:1px solid var(--line);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:12px;
+  }
+  footer p{
+    font-size:13px;
+    color:var(--paper-dim);
+    margin:0;
+  }
+
+  @media (max-width:720px){
+    .trunk{grid-template-columns:1fr;}
+    .trunk-main{border-right:none;border-bottom:1px solid var(--line);}
+    .branch-row{grid-template-columns:1fr;gap:6px;padding:18px 20px;}
+    .branch-go{justify-self:start;}
+    .standalone-grid{grid-template-columns:1fr;}
+    header{padding:64px 0 48px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Channel catalog</div>
+    <h1>Documentaries,<br>told simply.</h1>
+    <p class="lede">Nine channels, one idea: making history, nature, science and exploration accessible to everyone, without the jargon.</p>
+    <div class="reel">
+      <span>History</span>
+      <span>Nature & wildlife</span>
+      <span>Science & engineering</span>
+      <span>Exploration</span>
+      <span>Disasters</span>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>The Easy Documentary galaxy</h2>
+      <span class="section-num">01 — seven channels</span>
+    </div>
+    <p class="section-desc">One common trunk for general topics, and six branches each digging into their own territory.</p>
+
+    <div class="trunk">
+      <div class="trunk-main">
+        <div>
+          <div class="trunk-tag">The trunk</div>
+          <h3>Easy Documentary</h3>
+          <p>The general channel. The entry point into the whole Easy Documentary universe.</p>
+        </div>
+        <a class="trunk-link" href="https://www.youtube.com/@EasyDocumentary" target="_blank" rel="noopener">Visit channel →</a>
+      </div>
+
+      <div class="trunk-branches">
+        <a class="branch-row" href="https://www.youtube.com/@EasyDocumentaryHistory" target="_blank" rel="noopener">
+          <span class="branch-theme t-history">History</span>
+          <span class="branch-name">Easy Documentary History<span class="branch-desc">Empires, wars, figures of the past</span></span>
+          <span class="branch-go">Visit →</span>
+        </a>
+        <a class="branch-row" href="https://www.youtube.com/@EasyDocumentaryAncientHistory" target="_blank" rel="noopener">
+          <span class="branch-theme t-ancient">Antiquity</span>
+          <span class="branch-name">Easy Documentary Ancient History<span class="branch-desc">Ancient civilizations, great builders</span></span>
+          <span class="branch-go">Visit →</span>
+        </a>
+        <a class="branch-row" href="https://www.youtube.com/@EasyDocumentaryNature" target="_blank" rel="noopener">
+          <span class="branch-theme t-nature">Nature</span>
+          <span class="branch-name">Easy Documentary Nature<span class="branch-desc">Wildlife and ecosystems</span></span>
+          <span class="branch-go">Visit →</span>
+        </a>
+        <a class="branch-row" href="https://www.youtube.com/@EasyDocumentaryKnowledge" target="_blank" rel="noopener">
+          <span class="branch-theme t-knowledge">Knowledge</span>
+          <span class="branch-name">Easy Documentary Knowledge<span class="branch-desc">Science, engineering, how things are made</span></span>
+          <span class="branch-go">Visit →</span>
+        </a>
+        <a class="branch-row" href="https://www.youtube.com/@EasyDocumentaryTravel" target="_blank" rel="noopener">
+          <span class="branch-theme t-travel">Travel</span>
+          <span class="branch-name">Easy Documentary Travel<span class="branch-desc">Travel and discovery</span></span>
+          <span class="branch-go">Visit →</span>
+        </a>
+        <a class="branch-row" href="https://www.youtube.com/@EasyDocumentaryExplore" target="_blank" rel="noopener">
+          <span class="branch-theme t-explore">Exploration</span>
+          <span class="branch-name">Easy Documentary Explore<span class="branch-desc">Discovery and exploration at large</span></span>
+          <span class="branch-go">Visit →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>Spin-offs</h2>
+      <span class="section-num">02 — two channels</span>
+    </div>
+    <p class="section-desc">Two independent channels, outside the Easy Documentary galaxy.</p>
+
+    <div class="standalone-grid">
+      <div class="standalone-card card-time">
+        <div class="trunk-tag">History</div>
+        <h3>Time Machine</h3>
+        <p>History documentaries to travel back in time.</p>
+        <a class="trunk-link" href="https://www.youtube.com/@TimeMachineDocumentaries" target="_blank" rel="noopener">Visit channel →</a>
+      </div>
+      <div class="standalone-card card-disaster">
+        <div class="trunk-tag">Science & disasters</div>
+        <h3>Disaster TV</h3>
+        <p>Natural and industrial disasters, explained through science.</p>
+        <a class="trunk-link" href="https://www.youtube.com/@Disaster.TV.1" target="_blank" rel="noopener">Visit channel →</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Easy Documentary — nine channels, one shared passion for the real.</p>
+    <p>Updated in 2026</p>
+  </footer>
+</div>
+
+</body>
+</html>
