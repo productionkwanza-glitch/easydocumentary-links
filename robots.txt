@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://productionkwanza-glitch.github.io/easydocumentary-links/sitemap.xml
