@@ -204,10 +204,10 @@
   }
   .branch-row{
     display:grid;
-    grid-template-columns:90px 1fr auto;
+    grid-template-columns:56px 1fr auto;
     align-items:center;
-    gap:16px;
-    padding:18px 28px;
+    gap:18px;
+    padding:16px 28px;
     border-bottom:1px solid var(--line);
     transition:background .2s;
   }
@@ -237,14 +237,35 @@
   }
   .branch-row:hover .branch-go{color:var(--copper);}
 
-  /* theme colors */
-  .t-general{color:var(--copper);}
-  .t-history{color:#B8946A;}
-  .t-nature{color:var(--nature);}
-  .t-ancient{color:#A98759;}
-  .t-knowledge{color:var(--explore);}
-  .t-travel{color:#7A93A0;}
-  .t-explore{color:#8B9B7E;}
+  /* theme colors — matched to real channel logo palettes */
+  .t-general{color:#7198B0;}
+  .t-history{color:#A89B92;}
+  .t-nature{color:#8FAD89;}
+  .t-ancient{color:#8B7964;}
+  .t-knowledge{color:#5C95A3;}
+  .t-travel{color:#DB9E82;}
+  .t-explore{color:#C2B595;}
+
+  .branch-logo, .trunk-logo, .card-logo{
+    border-radius:50%;
+    display:block;
+    object-fit:cover;
+    flex-shrink:0;
+  }
+  .branch-logo{
+    width:56px;
+    height:56px;
+  }
+  .trunk-logo{
+    width:64px;
+    height:64px;
+    margin-bottom:18px;
+  }
+  .card-logo{
+    width:64px;
+    height:64px;
+    margin-bottom:18px;
+  }
 
   /* ===== STANDALONE CARDS ===== */
   .standalone-grid{
@@ -268,8 +289,8 @@
     font-size:14px;
     margin:0 0 28px;
   }
-  .card-disaster .trunk-tag{color:var(--disaster);}
-  .card-time .trunk-tag{color:#B8946A;}
+  .card-disaster .trunk-tag{color:#F9934E;}
+  .card-time .trunk-tag{color:#7E9E64;}
 
   /* ===== FOOTER ===== */
   footer{
@@ -290,8 +311,9 @@
   @media (max-width:720px){
     .trunk{grid-template-columns:1fr;}
     .trunk-main{border-right:none;border-bottom:1px solid var(--line);}
-    .branch-row{grid-template-columns:1fr;gap:6px;padding:18px 20px;}
-    .branch-go{justify-self:start;}
+    .branch-row{grid-template-columns:48px 1fr;gap:14px;padding:16px 20px;}
+    .branch-go{grid-column:2;justify-self:start;}
+    .branch-logo{width:44px;height:44px;}
     .standalone-grid{grid-template-columns:1fr;}
     header{padding:64px 0 48px;}
   }
@@ -323,6 +345,7 @@
     <div class="trunk">
       <div class="trunk-main">
         <div>
+          <img class="trunk-logo" src="ed_main.png" alt="Easy Documentary logo">
           <div class="trunk-tag">The trunk</div>
           <h3>Easy Documentary</h3>
           <p>The general channel. The entry point into the whole Easy Documentary universe.</p>
@@ -332,32 +355,32 @@
 
       <div class="trunk-branches">
         <a class="branch-row" href="https://www.youtube.com/@EasyDocumentaryHistory" target="_blank" rel="noopener">
-          <span class="branch-theme t-history">History</span>
+          <img class="branch-logo" src="ed_history.png" alt="Easy Documentary History logo">
           <span class="branch-name">Easy Documentary History<span class="branch-desc">Empires, wars, figures of the past</span></span>
           <span class="branch-go">Visit →</span>
         </a>
         <a class="branch-row" href="https://www.youtube.com/@EasyDocumentaryAncientHistory" target="_blank" rel="noopener">
-          <span class="branch-theme t-ancient">Antiquity</span>
+          <img class="branch-logo" src="ed_ancient_history.png" alt="Easy Documentary Ancient History logo">
           <span class="branch-name">Easy Documentary Ancient History<span class="branch-desc">Ancient civilizations, great builders</span></span>
           <span class="branch-go">Visit →</span>
         </a>
         <a class="branch-row" href="https://www.youtube.com/@EasyDocumentaryNature" target="_blank" rel="noopener">
-          <span class="branch-theme t-nature">Nature</span>
+          <img class="branch-logo" src="ed_nature.png" alt="Easy Documentary Nature logo">
           <span class="branch-name">Easy Documentary Nature<span class="branch-desc">Wildlife and ecosystems</span></span>
           <span class="branch-go">Visit →</span>
         </a>
         <a class="branch-row" href="https://www.youtube.com/@EasyDocumentaryKnowledge" target="_blank" rel="noopener">
-          <span class="branch-theme t-knowledge">Knowledge</span>
+          <img class="branch-logo" src="ed_knowledge.png" alt="Easy Documentary Knowledge logo">
           <span class="branch-name">Easy Documentary Knowledge<span class="branch-desc">Science, engineering, how things are made</span></span>
           <span class="branch-go">Visit →</span>
         </a>
         <a class="branch-row" href="https://www.youtube.com/@EasyDocumentaryTravel" target="_blank" rel="noopener">
-          <span class="branch-theme t-travel">Travel</span>
+          <img class="branch-logo" src="ed_travel.png" alt="Easy Documentary Travel logo">
           <span class="branch-name">Easy Documentary Travel<span class="branch-desc">Travel and discovery</span></span>
           <span class="branch-go">Visit →</span>
         </a>
         <a class="branch-row" href="https://www.youtube.com/@EasyDocumentaryExplore" target="_blank" rel="noopener">
-          <span class="branch-theme t-explore">Exploration</span>
+          <img class="branch-logo" src="ed_explore.png" alt="Easy Documentary Explore logo">
           <span class="branch-name">Easy Documentary Explore<span class="branch-desc">Discovery and exploration at large</span></span>
           <span class="branch-go">Visit →</span>
         </a>
@@ -374,12 +397,14 @@
 
     <div class="standalone-grid">
       <div class="standalone-card card-time">
+        <img class="card-logo" src="time_machine.png" alt="Time Machine logo">
         <div class="trunk-tag">History</div>
         <h3>Time Machine</h3>
         <p>History documentaries to travel back in time.</p>
         <a class="trunk-link" href="https://www.youtube.com/@TimeMachineDocumentaries" target="_blank" rel="noopener">Visit channel →</a>
       </div>
       <div class="standalone-card card-disaster">
+        <img class="card-logo" src="disaster_tv.png" alt="Disaster TV logo">
         <div class="trunk-tag">Science & disasters</div>
         <h3>Disaster TV</h3>
         <p>Natural and industrial disasters, explained through science.</p>
